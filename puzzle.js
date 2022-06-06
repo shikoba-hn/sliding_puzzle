@@ -67,6 +67,20 @@ class Puzzle {
     return this.rowColGroup(j, this.difficulty.width);
   }
 
+  moveCom() {
+    const h = this.difficulty.height;
+    this.moveVert(0, 1);
+    this.moveHorz(h, -1);
+    this.moveVert(0, -1);
+    this.moveHorz(h, 1);
+    this.moveHorz(0, -1);
+    this.moveHorz(h, -1);
+    this.moveVert(0, 1);
+    this.moveHorz(h, 1);
+    this.moveVert(0, -1);
+    this.moveHorz(0, 1);
+  }
+
   moveHorz(y, dir) {
     const rows = this.rowGroup(y);
     rows.forEach(row => this.moveSingleRowHorz(row, dir));

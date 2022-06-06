@@ -280,6 +280,8 @@ class HtmlUI {
         k = -1;
       }
       funs[move[0]](move[1], k * move[2]);
+    } else if (ev.keyCode == 75) { // K special "cheating" move
+      this.puzzle.moveCom();
     } else {
       return;
     }
